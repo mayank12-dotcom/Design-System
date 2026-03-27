@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDEN UI Docs</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">E</div>
+          <div>
+            <p class="brand-name">Eden UI</p>
+            <p class="brand-version">v1.2</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Primary">
+          <section class="nav-group">
+            <p class="nav-title">Getting Started</p>
+            <button class="nav-link is-active" data-page-target="intro">Introduction</button>
+          </section>
+
+          <section class="nav-group">
+            <p class="nav-title">Foundations</p>
+            <button class="nav-link" data-page-target="colors">Color</button>
+            <button class="nav-link" data-page-target="typography">Typography</button>
+          </section>
+
+          <section class="nav-group">
+            <p class="nav-title">All Components</p>
+            <button class="nav-link" data-page-target="components">Button</button>
+            <button class="nav-link" data-page-target="components">Input</button>
+            <button class="nav-link" data-page-target="components">Accordion</button>
+            <button class="nav-link" data-page-target="components">Slider</button>
+          </section>
+        </nav>
+      </aside>
+
+      <div class="workspace">
+        <header class="topbar">
+          <label class="searchbar" aria-label="Quick search">
+            <span class="search-icon">⌘</span>
+            <input id="searchInput" type="search" placeholder="Quick search..." />
+            <span class="search-shortcut">/</span>
+          </label>
+
+          <div class="topbar-actions" aria-hidden="true">
+            <button class="icon-button">○</button>
+            <button class="icon-button">◎</button>
+            <button class="icon-button">⋯</button>
+          </div>
+        </header>
+
+        <div class="content-grid">
+          <main class="content">
+            <section class="page is-active" data-page="intro" data-outline='["Why Copy/Paste?","Built for Production","Next Steps"]'>
+              <div class="page-header">
+                <p class="eyebrow">Getting Started</p>
+                <h1>Introduction</h1>
+                <p class="lede">
+                  Skip the months of implementation. EDEN UI turns a full design system
+                  into a production-ready reference site where tokens, typography, and
+                  components all live in one place.
+                </p>
+              </div>
+
+              <section class="doc-section">
+                <h2>Why Copy/Paste?</h2>
+                <p>
+                  Instead of hiding the system behind a package, this site exposes the
+                  actual structures teams need to build with confidence. It becomes both
+                  a reference and a handoff artifact.
+                </p>
+                <ul class="doc-list">
+                  <li>Complete control over implementation details</li>
+                  <li>Freedom to customize and extend component behavior</li>
+                  <li>No dependency lock-in or hidden design decisions</li>
+                  <li>Fast onboarding for design and engineering teams</li>
+                </ul>
+              </section>
+
+              <section class="doc-section">
+                <h2>Built for Production</h2>
+                <div class="feature-grid">
+                  <article class="feature-card">
+                    <p class="feature-label">Foundations</p>
+                    <h3>Token-first documentation</h3>
+                    <p>Colors, spacing, radius, and typography are exposed as reusable system primitives.</p>
+                  </article>
+                  <article class="feature-card">
+                    <p class="feature-label">Components</p>
+                    <h3>Preview and implementation</h3>
+                    <p>Each component page balances visual preview, usage notes, and code-facing references.</p>
+                  </article>
+                  <article class="feature-card">
+                    <p class="feature-label">Navigation</p>
+                    <h3>Docs that scale</h3>
+                    <p>The layout is designed for long-form browsing, quick search, and topic-based discovery.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Next Steps</h2>
+                <p>
+                  Use the foundations pages to audit the token system, then move into
+                  components to inspect interactive primitives like buttons, inputs,
+                  sliders, and layout patterns.
+                </p>
+                <div class="next-actions">
+                  <button class="primary-action" data-page-jump="colors">Explore Colors</button>
+                  <button class="secondary-action" data-page-jump="components">Browse Components</button>
+                </div>
+              </section>
+            </section>
+
+            <section class="page" data-page="colors" data-outline='["Token Summary","Token Controls","Color Tokens","Spacing and Radius"]'>
+              <div class="page-header">
+                <p class="eyebrow">Foundations</p>
+                <h1>Design Tokens</h1>
+                <p class="lede">
+                  This page now renders the actual tokens from your exported JSON, grouped
+                  by collection and token family so the documentation stays aligned with
+                  the source of truth.
+                </p>
+              </div>
+
+              <section class="doc-section">
+                <h2>Token Summary</h2>
+                <div id="tokenSummary" class="summary-grid"></div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Token Controls</h2>
+                <div id="colorTokenControls" class="token-toolbar"></div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Color Tokens</h2>
+                <div id="colorTokenMount" class="token-browser"></div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Spacing and Radius</h2>
+                <div id="sizeTokenMount" class="token-browser"></div>
+              </section>
+            </section>
+
+            <section class="page" data-page="typography" data-outline='["Responsive Tokens"]'>
+              <div class="page-header">
+                <p class="eyebrow">Foundations</p>
+                <h1>Typography</h1>
+                <p class="lede">
+                  The typography page reads the Responsive token collection directly
+                  from your export, including family, weight, size, line-height, and
+                  letter-spacing scales.
+                </p>
+              </div>
+
+              <section class="doc-section">
+                <h2>Responsive Tokens</h2>
+                <div id="typographyTokenControls" class="token-toolbar"></div>
+                <div id="typographyTokenMount" class="token-browser token-browser-typography"></div>
+              </section>
+            </section>
+
+            <section class="page" data-page="components" data-outline='["Preview","Installation","Examples","API Reference"]'>
+              <div class="page-header">
+                <p class="eyebrow">Base Components</p>
+                <h1>Button</h1>
+                <p class="lede">
+                  Renders a button or an element styled to resemble a button. This page
+                  mirrors the docs pattern used throughout the system with preview,
+                  installation, examples, and reference content.
+                </p>
+              </div>
+
+              <section class="doc-section">
+                <div class="preview-toolbar">
+                  <div class="tab-strip">
+                    <button class="mini-tab is-active" data-demo-tab="preview">Preview</button>
+                    <button class="mini-tab" data-demo-tab="code">Code</button>
+                  </div>
+                  <button class="copy-chip">Copy</button>
+                </div>
+
+                <div class="preview-panel is-active" data-demo-panel="preview">
+                  <div class="demo-center">
+                    <button class="ui-button">Button</button>
+                  </div>
+                </div>
+
+                <div class="preview-panel code-panel" data-demo-panel="code">
+                  <pre><code>&lt;button class="ui-button"&gt;Button&lt;/button&gt;</code></pre>
+                </div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Installation</h2>
+                <div class="install-card">
+                  <div class="install-tabs">
+                    <span class="install-tab is-active">npm</span>
+                    <span class="install-tab">pnpm</span>
+                    <span class="install-tab">yarn</span>
+                  </div>
+                  <pre><code>npm install @radix-ui/react-slot</code></pre>
+                </div>
+              </section>
+
+              <section class="doc-section">
+                <h2>Examples</h2>
+                <div class="example-grid">
+                  <article class="example-card">
+                    <p class="example-label">Primary</p>
+                    <button class="ui-button">Continue</button>
+                  </article>
+                  <article class="example-card">
+                    <p class="example-label">Round Edge</p>
+                    <button class="ui-button round">Continue</button>
+                  </article>
+                  <article class="example-card">
+                    <p class="example-label">Swipe</p>
+                    <button class="swipe-button">
+                      <span class="swipe-thumb">→</span>
+                      <span>Swipe to continue</span>
+                    </button>
+                  </article>
+                  <article class="example-card">
+                    <p class="example-label">Input</p>
+                    <label class="ui-input">
+                      <span>Label</span>
+                      <input type="text" placeholder="Type here..." />
+                    </label>
+                  </article>
+                  <article class="example-card example-card-wide">
+                    <p class="example-label">Accordion</p>
+                    <details class="ui-accordion" open>
+                      <summary>What does this component do?</summary>
+                      <p>It exposes the same docs pattern used for previews, tokens, and API-facing guidance.</p>
+                    </details>
+                  </article>
+                </div>
+              </section>
+
+              <section class="doc-section">
+                <h2>API Reference</h2>
+                <div class="api-table">
+                  <div class="api-row api-head">
+                    <span>Prop</span>
+                    <span>Type</span>
+                    <span>Default</span>
+                    <span>Description</span>
+                  </div>
+                  <div class="api-row">
+                    <span>variant</span>
+                    <span>primary | secondary</span>
+                    <span>primary</span>
+                    <span>Controls emphasis and surface treatment.</span>
+                  </div>
+                  <div class="api-row">
+                    <span>size</span>
+                    <span>sm | md | lg</span>
+                    <span>lg</span>
+                    <span>Maps the component to the relevant spacing and type tokens.</span>
+                  </div>
+                  <div class="api-row">
+                    <span>asChild</span>
+                    <span>boolean</span>
+                    <span>false</span>
+                    <span>Lets the component inherit semantics from its child.</span>
+                  </div>
+                </div>
+              </section>
+            </section>
+          </main>
+
+          <aside class="outline">
+            <div class="outline-card">
+              <p class="outline-title">On This Page</p>
+              <div id="outlineLinks" class="outline-links"></div>
+              <div id="activeTokenCard" class="active-token-card" hidden></div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div id="copyToast" class="copy-toast" hidden></div>
+    <script src="./token-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

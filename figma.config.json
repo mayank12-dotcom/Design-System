@@ -1,0 +1,45 @@
+{
+  "fileKey": "0td93qgEm15nkmBt7p2z93",
+  "tokenExportPath": "eden-ui-tokens.json",
+  "tokenBuildScript": "npm run build:tokens",
+  "primaryCanvasNodeId": "123:2600",
+  "storybookPath": "stories",
+  "componentMappingsPath": "src/code-connect/mappings.ts",
+  "components": [
+    {
+      "name": "Button",
+      "nodeId": "128:8838",
+      "source": "src/components/Button.tsx"
+    },
+    {
+      "name": "IconButton",
+      "nodeId": "135:14320",
+      "source": "src/components/IconButton.tsx"
+    },
+    {
+      "name": "ButtonGroup",
+      "nodeId": "4:53428",
+      "source": "src/components/ButtonGroup.tsx"
+    },
+    {
+      "name": "ProgressiveButton",
+      "nodeId": "359:46625",
+      "source": "src/components/ProgressiveButton.tsx"
+    },
+    {
+      "name": "PlainButton",
+      "nodeId": "141:1470",
+      "source": "src/components/PlainButton.tsx"
+    },
+    {
+      "name": "LinkButton",
+      "nodeId": "141:1551",
+      "source": "src/components/LinkButton.tsx"
+    },
+    {
+      "name": "ButtonStack",
+      "nodeId": "440:32541",
+      "source": "src/components/ButtonStack.tsx"
+    }
+  ]
+}
